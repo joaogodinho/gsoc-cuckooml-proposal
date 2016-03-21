@@ -1,3 +1,5 @@
+**Run script `extract_samples.sh` to unpack samples correctly**
+
 # GSoC CuckooML proposal
 
 So we're given 199 malware reports to start warming up for the real challenge. Since the amount of samples is pretty low, I'll focus on an unsupervised learning method and see if something interesting comes out of it.
