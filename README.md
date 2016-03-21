@@ -1,5 +1,7 @@
 **Run script `extract_samples.sh` to unpack samples correctly**
 
+**Tested with python3**
+
 # GSoC CuckooML proposal
 
 So we're given 199 malware reports to start warming up for the real challenge. Since the amount of samples is pretty low, I'll focus on an unsupervised learning method and see if something interesting comes out of it.
@@ -24,3 +26,5 @@ Before going any deeper on the hypotheses, I'll try to get a better understandin
 - dropped -- [Files created by the malware and Cuckoo](https://github.com/cuckoosandbox/cuckoo/blob/master/modules/processing/dropped.py)
 
 More info in [Processing Modules](http://docs.cuckoosandbox.org/en/latest/customization/processing/).
+
+Based on the structure, the information given by each section and focusing on the results of dynamic analysis, the sections I'll focus on will be: `target`, `virustotal`, `behavior` and `signatures`.
