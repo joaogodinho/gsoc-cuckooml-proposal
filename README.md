@@ -28,3 +28,21 @@ Before going any deeper on the hypotheses, I'll try to get a better understandin
 More info in [Processing Modules](http://docs.cuckoosandbox.org/en/latest/customization/processing/).
 
 Based on the structure, the information given by each section and focusing on the results of dynamic analysis, the sections I'll focus on will be: `target`, `virustotal`, `behavior` and `signatures`.
+
+## Type of samples
+
+With better understanding on how the reports are structured, let's now look at the actual data provided. The following shows how many samples provide each section:
+
+<pre>
+<b>behavior appears in 198 samples (99.50%)
+signatures appears in 191 samples (95.98%)</b>
+info appears in 199 samples (100.00%)
+network appears in 199 samples (100.00%)
+static appears in 160 samples (80.40%)
+<b>target appears in 199 samples (100.00%)
+virustotal appears in 171 samples (85.93%)</b>
+dropped appears in 137 samples (68.84%)
+strings appears in 199 samples (100.00%)
+buffer appears in 58 samples (29.15%)
+debug appears in 199 samples (100.00%)
+</pre>
