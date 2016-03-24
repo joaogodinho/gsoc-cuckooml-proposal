@@ -46,3 +46,26 @@ strings appears in 199 samples (100.00%)
 buffer appears in 58 samples (29.15%)
 debug appears in 199 samples (100.00%)
 </pre>
+
+To better understand the composition of `behavior` (only `apistats`), `signatures` and  `virustotal` sections, I made a small parser to get all unique values in each section:
+
+###`behavior` (`apistats`)
+```
+Number of unique apicalls: 245
+Ten most common calls:
+[('NtClose', 458), ('LdrGetProcedureAddress', 458), ('NtAllocateVirtualMemory', 451), ('LdrGetDllHandle', 439), ('LdrLoadDll', 436), ('NtFreeVirtualMemory', 426), ('RegCloseKey', 413), ('NtCreateFile', 405), ('RegOpenKeyExW', 390), ('NtUnmapViewOfSection', 390)]
+```
+###`signatures`
+```
+Number of unique signatures: 61
+Ten most common signatures:
+[('antivirus_virustotal', 167), ('raises_exception', 142), ('allocates_rwx', 137), ('creates_exe', 59), ('dumped_buffer', 58), ('antisandbox_productid', 53), ('pe_features', 49), ('recon_fingerprint', 45), ('network_http', 44), ('injection_runpe', 44)]
+```
+###`virustotal`
+```
+Number of unique families: 1054
+Ten most common families:
+[('Genetic', 61), ('Artemis', 41), ('Rakhni', 38), ('Delf', 26), ('GenericKD', 26), ('Betabot', 23), ('DownLoader14', 23), ('Zbot', 22), ('Kazy', 22), ('Fsysna', 21)]
+```
+
+With a better notion on what the samples provide, it's time to try some clustering.
