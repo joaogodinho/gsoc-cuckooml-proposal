@@ -82,15 +82,28 @@ In order to apply a simple clustering, I need to convert the calls into a vector
 
 In file [`clustering.py`](clustering.py) the tf-idf and K-Means is applied with different clusters (from 2 to 9). It's worth noting that [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis) is applied in order to transform the big tf-idf vector into its principal components, this is mainly done to faciliate plotting. The plotting results can be seen in the following images, where black dots represent samples and white crosses the cluster center:
 
-![2 Clusters](img/clustering2.png)
-![3 Clusters](img/clustering3.png)
-![4 Clusters](img/clustering4.png)
-![5 Clusters](img/clustering5.png)
-![6 Clusters](img/clustering6.png)
-![7 Clusters](img/clustering7.png)
-![8 Clusters](img/clustering8.png)
-![9 Clusters](img/clustering9.png)
+![2 Clusters](img/clustering_apistats2.png)
+![3 Clusters](img/clustering_apistats3.png)
+![4 Clusters](img/clustering_apistats4.png)
+![5 Clusters](img/clustering_apistats5.png)
+![6 Clusters](img/clustering_apistats6.png)
+![7 Clusters](img/clustering_apistats7.png)
+![8 Clusters](img/clustering_apistats8.png)
+![9 Clusters](img/clustering_apistats9.png)
 
 The use of this method could allow to separate different malware families based on behavior.
 
 The previous results should take into consideration that calls like `RegOpenKeyExW` and `RegOpenKeyExA` are distinguished, when they accomplish the same. On a next iteration this should be resolved, but I'll focus first on experimenting with different features.
+
+The next feature I tried was `signatures`, file [`extract_signatures.py`](extract_signatures.py) does the same as [`extract_apistats-py`](extract_apistats.py), but with `signatures`.
+
+The file [`clustering.py`](clustering.py) now also creates the clustering for `signatures`, and the results are as follow:
+
+![2 Clusters](img/clustering_signatures2.png)
+![3 Clusters](img/clustering_signatures3.png)
+![4 Clusters](img/clustering_signatures4.png)
+![5 Clusters](img/clustering_signatures5.png)
+![6 Clusters](img/clustering_signatures6.png)
+![7 Clusters](img/clustering_signatures7.png)
+![8 Clusters](img/clustering_signatures8.png)
+![9 Clusters](img/clustering_signatures9.png)
