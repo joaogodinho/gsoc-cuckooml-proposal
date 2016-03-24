@@ -90,3 +90,7 @@ In file [`clustering.py`](clustering.py) the tf-idf and K-Means is applied with 
 ![7 Clusters](img/clustering7.png)
 ![8 Clusters](img/clustering8.png)
 ![9 Clusters](img/clustering9.png)
+
+The use of this method could allow to separate different malware families based on behavior.
+
+The previous results should take into consideration that calls like `RegOpenKeyExW` and `RegOpenKeyExA` are distinguished, when they accomplish the same. On a next iteration this should be resolved, but I'll focus first on experimenting with different features.
