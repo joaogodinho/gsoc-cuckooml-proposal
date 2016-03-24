@@ -76,7 +76,7 @@ Due to the amount of signatures in the samples, I suspect that there isn't enoug
 
 In order to test hypothesis 2, I'll start by extracting features from the reports. From all the available information, the one that seems more relevant is the api calls shown in the reports (`apistats`).
 
-The file [`extract_apistats.py`](extract_apistats.py) creates a file in [`apistats/`](apistats/) for each sample with only the api calls (order may not be the same).
+The file [`extract_apistats.py`](extract_apistats.py) creates a file in [`apistats/`](apistats/) for each sample with only the api calls (order may not be the same). It's worth nothing that the number of calls per proccess is **not** taken into consideration. The only way for a call to appear more than once is if multiple processes use it.
 
 In order to apply a simple clustering, I need to convert the calls into a vector, in order to do so, I used [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). A simple term frequency is not good enough due to calls like `NtClose` that appear very frequently but aren't as meaningful as others with little frequency.
 
@@ -95,7 +95,7 @@ The use of this method could allow to separate different malware families based 
 
 The previous results should take into consideration that calls like `RegOpenKeyExW` and `RegOpenKeyExA` are distinguished, when they accomplish the same. On a next iteration this should be resolved, but I'll focus first on experimenting with different features.
 
-The next feature I tried was `signatures`, file [`extract_signatures.py`](extract_signatures.py) does the same as [`extract_apistats-py`](extract_apistats.py), but with `signatures`.
+The next feature I tried was `signatures`, file [`extract_signatures.py`](extract_signatures.py) does the same as [`extract_apistats.py`](extract_apistats.py), but with `signatures`.
 
 The file [`clustering.py`](clustering.py) now also creates the clustering for `signatures`, and the results are as follow:
 
@@ -107,3 +107,5 @@ The file [`clustering.py`](clustering.py) now also creates the clustering for `s
 ![7 Clusters](img/clustering_signatures7.png)
 ![8 Clusters](img/clustering_signatures8.png)
 ![9 Clusters](img/clustering_signatures9.png)
+
+It's interesting to see that `apistats` are more scattered than `signatures`, this may be a reflect of the number of calls (245) vs signatures (61) as well as, like already mentioned, calls with the same functionality are distinguised.
