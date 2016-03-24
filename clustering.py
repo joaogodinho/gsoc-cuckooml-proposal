@@ -58,6 +58,7 @@ def cluster(apistats, size=5):
     # Plot the centroids
     centroids = km.cluster_centers_
     plt.scatter(centroids[:, 0], centroids[:, 1], marker='x', color='w', linewidths=2, zorder=10)
+    plt.title('K-means clustering (n_clusters={}, PCA-reduced data)'.format(size))
     plt.xlim(x_min, x_max)
     plt.ylim(y_min, y_max)
     plt.xticks(())
