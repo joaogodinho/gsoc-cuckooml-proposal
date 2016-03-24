@@ -10,7 +10,7 @@ Making use of the scientific method, I'll start by formulating hypotheses and se
 
 Before going any deeper on the hypotheses, I'll try to get a better understanding of the samples, specifically:
 - [x] ~~Report's structure~~
-- [ ] Type of samples
+- [x] ~~Type of samples~~
 
 ## Report's structure
 - target -- [Metadata about the analyzed file](https://github.com/cuckoosandbox/cuckoo/blob/master/modules/processing/targetinfo.py)
@@ -69,3 +69,24 @@ Ten most common families:
 ```
 
 With a better notion on what the samples provide, it's time to try some clustering.
+All the previous observations can be replicated by running [`analyze_report.py`](analyze_report.py)
+
+## Hypothesis 2 - malware will behave differently depending on its purpose
+Due to the amount of signatures in the samples, I suspect that there isn't enough data to test hypothesis 1, hence I'll skip it.
+
+In order to test hypothesis 2, I'll start by extracting features from the reports. From all the available information, the one that seems more relevant is the api calls shown in the reports (`apistats`).
+
+The file [`extract_apistats.py`](extract_apistats.py) creates a file in [`apistats/`](apistats/) for each sample with only the api calls (order may not be the same).
+
+In order to apply a simple clustering, I need to convert the calls into a vector, in order to do so, I used [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). A simple term frequency is not good enough due to calls like `NtClose` that appear very frequently but aren't as meaningful as others with little frequency.
+
+In file [`clustering.py`](clustering.py) the tf-idf and K-Means is applied with different clusters (from 2 to 9). It's worth noting that [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis) is applied in order to transform the big tf-idf vector into its principal components, this is mainly done to faciliate plotting. The plotting results can be seen in the following images, where black dots represent samples and white crosses the cluster center:
+
+![2 Clusters](img/clustering2.png)
+![3 Clusters](img/clustering3.png)
+![4 Clusters](img/clustering4.png)
+![5 Clusters](img/clustering5.png)
+![6 Clusters](img/clustering6.png)
+![7 Clusters](img/clustering7.png)
+![8 Clusters](img/clustering8.png)
+![9 Clusters](img/clustering9.png)
