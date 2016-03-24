@@ -1,0 +1,1 @@
+CreateToolhelp32Snapshot GetCursorPos __exception__ NtAllocateVirtualMemory NtClose Process32NextW EnumWindows Process32FirstW

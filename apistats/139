@@ -1,0 +1,1 @@
+GetCursorPos SetWindowsHookExA RegOpenKeyExA LoadStringA NtQueryInformationFile FindResourceA SetErrorMode NtCreateFile __exception__ LdrLoadDll LdrGetProcedureAddress

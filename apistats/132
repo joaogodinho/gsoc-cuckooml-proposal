@@ -1,0 +1,1 @@
+__exception__ NtFreeVirtualMemory NtTerminateProcess GetSystemTimeAsFileTime LdrGetDllHandle SetUnhandledExceptionFilter ControlService NtProtectVirtualMemory

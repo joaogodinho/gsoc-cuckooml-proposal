@@ -1,0 +1,1 @@
+NtTerminateProcess GetSystemTimeAsFileTime NtSetInformationFile SetUnhandledExceptionFilter LdrGetDllHandle NtCreateFile NtProtectVirtualMemory NtDelayExecution

@@ -1,0 +1,1 @@
+send NtClose NtOpenFile connect recv select NtQueryValueKey RegOpenKeyExA NtDelayExecution closesocket RegQueryValueExA LdrLoadDll NtCreateMutant DeviceIoControl GetSystemInfo SetUnhandledExceptionFilter socket RegCloseKey LdrGetProcedureAddress NtOpenKey gethostbyname NtAllocateVirtualMemory WSAStartup GetSystemTimeAsFileTime LdrUnloadDll NtOpenDirectoryObject
