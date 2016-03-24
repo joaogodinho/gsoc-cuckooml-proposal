@@ -1,0 +1,1 @@
+recon_fingerprint has_authenticode pe_features raises_exception dumped_buffer allocates_rwx antivirus_virustotal antivm_generic_bios antisandbox_unhook

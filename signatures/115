@@ -1,0 +1,1 @@
+has_authenticode pe_features raises_exception allocates_rwx creates_doc creates_exe suspicious_process antivirus_virustotal packer_upx

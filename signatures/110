@@ -1,0 +1,1 @@
+exec_crash pe_features raises_exception creates_exe antivirus_virustotal persistence_autorun

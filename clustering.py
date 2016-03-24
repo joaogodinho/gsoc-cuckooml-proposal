@@ -8,26 +8,27 @@ import numpy as np
 
 
 APISTATS_DIR = 'apistats/'
+SIGNATURES_DIR = 'signatures/'
 IMAGES_DIR = 'img/'
 
 
 # Returns a list with the path for all reports
-def listReportsPath():
+def listReportsPath(path):
     paths = []
-    for f in listdir(APISTATS_DIR):
-        paths.append(join(APISTATS_DIR, f))
+    for f in listdir(path):
+        paths.append(join(path, f))
     return paths
 
 
-def cluster(apistats, size=5):
+def cluster(files, out_name, size=5):
     # Turn the calls into a vector
     vectorizer = TfidfVectorizer()
-    X = vectorizer.fit_transform((open(f).read() for f in apistats))
+    X = vectorizer.fit_transform((open(f).read() for f in files))
 
     # Clustering with KMeans
     n_clusters = size
     km = KMeans(n_clusters=n_clusters)
-    print('Clustering api calls with {} clusters...'.format(n_clusters))
+    print('Clustering with {} clusters...'.format(n_clusters))
     reduced_data = PCA(n_components=2).fit_transform(X.toarray())
     km.fit(reduced_data)
 
@@ -63,7 +64,7 @@ def cluster(apistats, size=5):
     plt.ylim(y_min, y_max)
     plt.xticks(())
     plt.yticks(())
-    plt.savefig(IMAGES_DIR + 'clustering' + str(size))
+    plt.savefig(IMAGES_DIR + 'clustering_' + out_name + str(size))
 
 
 def main():
@@ -73,9 +74,11 @@ def main():
         # Directory already exists
         pass
 
-    apistats = listReportsPath()
+    apistats = listReportsPath(APISTATS_DIR)
+    signatures = listReportsPath(SIGNATURES_DIR)
     for i in range(2, 10):
-        cluster(apistats, size=i)
+        cluster(apistats, 'apistats', size=i)
+        cluster(signatures, 'signatures', size=i)
 
 
 if __name__ == '__main__':
