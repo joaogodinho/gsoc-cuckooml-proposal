@@ -109,3 +109,18 @@ The file [`clustering.py`](clustering.py) now also creates the clustering for `s
 ![9 Clusters](img/clustering_signatures9.png)
 
 It's interesting to see that `apistats` are more scattered than `signatures`, this may be a reflect of the number of calls (245) vs signatures (61) as well as, like already mentioned, calls with the same functionality are distinguised.
+
+The last feature I tried was `virustotal`. Again, file [`extract_virustotal.py`](extract_virustotal.py) behaves like the previous two.
+
+I added to [`clustering.py`](clustering.py) the clustering for `virustotal` and the results are as follow:
+
+![2 Clusters](img/clustering_virustotal2.png)
+![3 Clusters](img/clustering_virustotal3.png)
+![4 Clusters](img/clustering_virustotal4.png)
+![5 Clusters](img/clustering_virustotal5.png)
+![6 Clusters](img/clustering_virustotal6.png)
+![7 Clusters](img/clustering_virustotal7.png)
+![8 Clusters](img/clustering_virustotal8.png)
+![9 Clusters](img/clustering_virustotal9.png)
+
+This is by far the feature that results in less scattering, with three clusters we can already observe a good separation between samples. The result is understandable, considering that even though there are more unique families (1054), it's much more common for samples to share a smaller subset of the total number. For `apistats` and `signatures` the features are more evenly spread, showing more scattering. On a future iteration, constructing n-grams with n >= 2 could show more interesting results.
