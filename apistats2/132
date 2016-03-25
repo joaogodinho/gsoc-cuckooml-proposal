@@ -1,0 +1,1 @@
+ControlService LdrGetDllHandle NtTerminateProcess GetSystemTimeAsFileTime NtFreeVirtualMemory SetUnhandledExceptionFilter __exception__ NtProtectVirtualMemory

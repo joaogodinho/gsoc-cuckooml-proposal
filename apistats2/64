@@ -1,0 +1,1 @@
+NtClose GetSystemTimeAsFileTime GetSystemInfo NtOpenFile select DeviceIoControl NtQueryValueKey LdrLoadDll WSAStartup NtCreateMutant connect recv gethostbyname LdrGetProcedureAddress SetUnhandledExceptionFilter send closesocket NtOpenKey NtAllocateVirtualMemory NtDelayExecution socket RegOpenKeyEx RegCloseKey RegQueryValueEx NtOpenDirectoryObject LdrUnloadDll

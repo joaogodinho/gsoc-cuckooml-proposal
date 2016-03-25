@@ -1,0 +1,1 @@
+LdrGetProcedureAddress __anomaly__ NtProtectVirtualMemory LdrGetDllHandle __exception__
