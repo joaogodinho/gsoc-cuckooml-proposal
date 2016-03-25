@@ -123,4 +123,19 @@ I added to [`clustering.py`](clustering.py) the clustering for `virustotal` and 
 ![8 Clusters](img/clustering_virustotal8.png)
 ![9 Clusters](img/clustering_virustotal9.png)
 
-This is by far the feature that results in less scattering, with three clusters we can already observe a good separation between samples. The result is understandable, considering that even though there are more unique families (1054), it's much more common for samples to share a smaller subset of the total number. For `apistats` and `signatures` the features are more evenly spread, showing more scattering. On a future iteration, constructing n-grams with n >= 2 could show more interesting results.
+This is by far the feature that results in less scattering, with three clusters we can already observe a good separation between samples. The result is understandable, considering that even though there are more unique families (1054), it's much more common for samples to share a smaller subset of the total number. It could be interesting to apply a simple Naive Bayes to classify samples into one of three clusters, based on the normalized `virustotal` data.
+
+For `apistats` and `signatures` the features are more evenly spread, showing more scattering. On a future iteration, constructing n-grams with n >= 2 could show more interesting results.
+
+With all basic features tested, I did a new iteration on `apistats`, creating a new [`extract_apistats2.py`](extract_apistats2.py) that treats unicode and ascii calls like the same. The following is the result of clustering with the new data:
+
+![2 Clusters](img/clustering_apistats22.png)
+![3 Clusters](img/clustering_apistats23.png)
+![4 Clusters](img/clustering_apistats24.png)
+![5 Clusters](img/clustering_apistats25.png)
+![6 Clusters](img/clustering_apistats26.png)
+![7 Clusters](img/clustering_apistats27.png)
+![8 Clusters](img/clustering_apistats28.png)
+![9 Clusters](img/clustering_apistats29.png)
+
+The results are still pretty scattered, making it hard to distinguish clusters. Since I still had some spare time, I created a new extraction that takes into consideraton the number of times a call is made.
