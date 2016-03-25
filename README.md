@@ -1,6 +1,6 @@
 **Run script `extract_samples.sh` to unpack samples correctly**
 
-**Tested with python3**
+**Tested with python3. Code needs refactoring (a lot of `yy` + `p` happened)**
 
 # GSoC CuckooML proposal
 
