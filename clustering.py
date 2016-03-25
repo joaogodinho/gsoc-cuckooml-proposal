@@ -9,6 +9,7 @@ import numpy as np
 
 APISTATS_DIR = 'apistats/'
 SIGNATURES_DIR = 'signatures/'
+VIRUSTOTAL_DIR = 'virustotal/'
 IMAGES_DIR = 'img/'
 
 
@@ -76,9 +77,11 @@ def main():
 
     apistats = listReportsPath(APISTATS_DIR)
     signatures = listReportsPath(SIGNATURES_DIR)
+    virustotal = listReportsPath(VIRUSTOTAL_DIR)
     for i in range(2, 10):
         cluster(apistats, 'apistats', size=i)
         cluster(signatures, 'signatures', size=i)
+        cluster(virustotal, 'virustotal', size=i)
 
 
 if __name__ == '__main__':
