@@ -11,6 +11,7 @@ APISTATS_DIR = 'apistats/'
 SIGNATURES_DIR = 'signatures/'
 VIRUSTOTAL_DIR = 'virustotal/'
 APISTATS2_DIR = 'apistats2/'
+APISTATS3_DIR = 'apistats3/'
 IMAGES_DIR = 'img/'
 
 
@@ -80,12 +81,13 @@ def main():
     signatures = listReportsPath(SIGNATURES_DIR)
     virustotal = listReportsPath(VIRUSTOTAL_DIR)
     apistats2 = listReportsPath(APISTATS2_DIR)
+    apistats3 = listReportsPath(APISTATS3_DIR)
     for i in range(2, 10):
         cluster(apistats, 'apistats', size=i)
         cluster(signatures, 'signatures', size=i)
         cluster(virustotal, 'virustotal', size=i)
         cluster(apistats2, 'apistats2', size=i)
-
+        cluster(apistats3, 'apistats3', size=i)
 
 if __name__ == '__main__':
     main()
