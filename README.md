@@ -139,3 +139,18 @@ With all basic features tested, I did a new iteration on `apistats`, creating a 
 ![9 Clusters](img/clustering_apistats29.png)
 
 The results are still pretty scattered, making it hard to distinguish clusters. Since I still had some spare time, I created a new extraction that takes into consideraton the number of times a call is made.
+
+The new file is [`extract_apistats3.py`](extract_apistats3.py), and the clustering results are the following:
+
+![2 Clusters](img/clustering_apistats32.png)
+![3 Clusters](img/clustering_apistats33.png)
+![4 Clusters](img/clustering_apistats34.png)
+![5 Clusters](img/clustering_apistats35.png)
+![6 Clusters](img/clustering_apistats36.png)
+![7 Clusters](img/clustering_apistats37.png)
+![8 Clusters](img/clustering_apistats38.png)
+![9 Clusters](img/clustering_apistats39.png)
+
+When considering the number of calls made, the results are more interesting, one can see that with 3/4 clusters we can already separate behaviors.
+
+With this I complete my prototyping for the given samples. It would be interesting to mix the features, like `apistats` and `signatures`, and see the results.
